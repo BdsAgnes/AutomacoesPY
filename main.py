@@ -4,8 +4,8 @@ from tkinter.filedialog import askdirectory
 caminho = askdirectory(title="Selecione uma pasta")
 # lista todos arquivos que estão dentro desse caminho
 lista_arquivos = os.listdir(caminho)
-''' dicionario de arquivos com o nome pasta e
-as estensões de arquivos que irá na quela pasta '''
+''' dicionário de arquivos com o nome pasta e
+as extensões de arquivos que irá na quela pasta '''
 locais = {
     "imagens": [".png", ".jpg"],
     "planilhas": [".xlsx"],
@@ -20,7 +20,7 @@ for arquivo in lista_arquivos:
         if extensao in locais[pasta]:
             # verifica se a pasta existe
             if not os.path.exists(f"{caminho}/{pasta}"):
-                # caso não, vai criar
+                # caso não, irá criar
                 os.mkdir(f"{caminho}/{pasta}")
                 # reorganizando os arquivos
             os.rename(f"{caminho}/{arquivo}", f"{caminho}/{pasta}/{arquivo}")
